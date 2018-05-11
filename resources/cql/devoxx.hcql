@@ -1,0 +1,8 @@
+--:name message/write
+INSERT INTO message (sender, date, word, message_id, recipient, subject) VALUES (:sender, :date, :word, :message-id, :recipient, :subject)
+
+--:name message/read
+SELECT :i:message-id, sender, recipient, subject from message where date = :date and sender = :sender
+
+--:name message/search
+SELECT :i:message-id, sender, recipient, subject from message where date = :date and sender = :sender and word = :word
